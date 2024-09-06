@@ -18,9 +18,9 @@
     <input id="input_quantiColaborador" placeholder="Insira o total de trabalhador">
 
     <h4>Informe o gasto média por mês com cada trabalhador: </h4>
-    <input id="input_gastoFunc" placeholder="Insira o gasto com trabalhadores"><br>
+    <input id="input_gastoFunc" placeholder="Insira o gasto com trabalhadores"><br><br>
 
-    <button onclick="ExibirSimulacao()">Gerar Simulação</button>
+    <button onclick="ExibirSimulacao()">Gerar Simulação</button><br>
 
     <div id="div_transição">
         <h1></h1>
@@ -40,7 +40,7 @@
         const gastoTrabalhador = Number(input_gastoFunc.value);
         console.log(gastoTrabalhador);
         var gastoTrabAnual = gastoTrabalhador * 12; 
-        var gastoAnual = gastoTrabAnual.toFixed(7);//sálario anual
+        var gastoAnual = gastoTrabAnual;//sálario anual
         const multaNormas = 15000; //média
         const valorInvalidez = 54000; //média - cálculo invalidez
         const valorAcidenteGrave = 65000; //média
@@ -51,6 +51,12 @@
         var TotalAcidenteGrave = valorAcidenteGrave + despesaMedica; 
         var totalInvalidez = valorInvalidez + despesaMedica ; 
 
-        div_transição.innerHTML=``
+        div_transição.innerHTML=`Olá, ${nomeCliente}, seu investimento na cozinha é de ${investimentoCozinha}, 
+        voce tem ${qtdTrabalhador}, o seu gasto médio é de ${gastoTrabalhador}, o seu gasto anual é de ${gastoTrabAnual}
+        e ${gastoAnual}, a multa por infrigir as normas é de ${multaNormas}, o valor médio em acidentes de invalidez é de ${valorInvalidez}, 
+        o valor médio em acidentes graves é de ${valorAcidenteGrave}, e o valor das despesas médicas é de ${despesaMedica}, 
+        o valor da perda total da cozinha é de ${PTcozinha}, o valor total em caso de morte é de ${morte}, o valor total 
+        em caso de acidente grave é de ${TotalAcidenteGrave}, e o valor total em caso de invalidez é de ${totalInvalidez}, 
+        valeu.`;
     }
 </script>
